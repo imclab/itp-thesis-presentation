@@ -1,0 +1,41 @@
+section.present {
+
+}
+
+.slides {
+	width: 1440px !important;
+	height: 840px !important;
+}
+
+.reveal section img {
+	margin: 0px;
+	background: white;
+	border: 0px !important;
+	box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+}
+
+
+.reveal img {
+	max-width: 100% !important;
+	max-height: 100% !important;
+}
+
+.presentimg {
+	top: -420px !important;
+}
+
+.reveal blockquote {
+	width: 70%;
+	color: #0B61A4 !important;
+	font-style: italic;
+	background: none !important;
+	box-shadow: none !important;
+}
+
+.tmp {
+	margin: 5px auto;
+	padding: 5px;
+	background: rgba(255,255,255,.05);
+	box-shadow: 0 0 2px rgba(0,0,0,.2);
+	color: #0B61A4;
+}

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Predicting Entailment | Gavin Hackeling</title>
+
+	<meta name="description" content="A presentation on predicting entailment in unstructured text by Gavin Hackeling">
+	<meta name="author" content="Gavin Hackeling">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="css/reveal.min.css">
+	<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+	<script>
+	document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+	</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+		<!-- Custom styles -->
+		<link rel="stylesheet" href="css/gavin.css">
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides" style="width:1440px!important;height=840px;">
+				<section>
+					<h2>
+						Predicting Entailment
+					</h2>
+					<h3>Gavin Hackeling</h3>
+				</section>
+				<section>
+					<h3 style="text-align:left;">In the first part of this presentation, I will describe a <strong>language-processing capability.</strong></h3>
+					<br />
+					<h3 style="text-align:left;">
+						In the second part I will demonstrate <strong>one application of this capability.</strong>
+					</h3>
+				</section>
+				<section>
+					<h2>Part I:</h2>
+					<h2>Predicting Entailment in Unstructured Text</h2>
+				</section>
+				<section>
+					<h3>Entailment is the relationship between sentences that holds when one sentence follows from another.</h3>
+					<br>
+					<h3><blockquote>I ate food.</blockquote></h3>
+					<h3>follows from</h3>
+					<h3><blockquote>I ate pizza.</blockquote></h3>
+				</section>
+				<section>
+					<h3><blockquote>Carolina beat Duke.</blockquote></h3>
+					<h3>follows from</h3>
+					<h3><blockquote>North Carolina defeated Duke after crushing State.</blockquote></h3>
+					<h3>
+						<br>
+					</h3>
+					<div>
+						<br>
+					</div>
+					<h3><blockquote>A student presented a project.</blockquote></h3>
+					<h3>does <strong>not</strong> follow from</h3>
+					<h3><blockquote>No student presented.</blockquote></h3>
+				</section>
+				<section>
+					<h3>I have built a system that predicts the entailment relations that exists between pairs of plain English texts.</h3>
+					<br />
+					<h3>Predicting entailment can allow applications to understand what a text means in relation to another.</h3>
+				</section>
+				<section>
+					<h2>Demo</h2>
+				</section>
+				<section>
+					<h2>Part II</h2>
+					<h2>An Application of Entailment Prediction: Polar Question Answering</h2>
+				</section>
+				<section>
+					<h3>First, a note about search engine usage:</h3>
+					<br />
+					<h3 style="text-align:left;">People often use search engines to find answers, not documents.</h3>
+					<h3 style="text-align:left;">Many people use English sentences as their queries rather than keywords.</h3>
+					<div>quotes and statistics here about search engine usage</div>
+				</section>
+				<section>
+					<h3>Search engines, and assistants like Google Now and Siri, sometimes surface answers to a type of question called <strong>factoids</strong>.</h3>
+				</section>
+				<section class="presentimg">
+					<img src="img/g_f_brooklyn.jpg" alt="Factoid screenshot" height="838" width="1433">
+				</section>
+				<section class="presentimg">
+					<img src="img/b_f_uk.jpg" alt="Factoid screenshot" height="838" width="1433">
+				</section>
+				<section class="presentimg">
+					<img src="img/w_f_declaration.jpg" alt="Factoid screenshot" height="838" width="1433">
+				</section>
+				<!-- replace with screenshot in phone -->
+				<section class="presentimg">
+					<img src="img/gn_f_jakarta.png" alt="Factoid screenshot" height="1280" width="720">
+				</section>
+				<section>
+					<h3>These systems use <strong>structured</strong> data sources to answer factoid questions.</h3>
+					<br>
+					<h3>Producing such structured data is expensive and time-consuming.</h3>
+				</section>
+				<section>
+					<h3>Users like this feature, and have become habituated to it.</h3>
+					<div>Statistics about habituation</div>
+				</section>
+				<section>
+					<h3>The problem is that not all questions are factoids, and search engines do not answer many of these types of questions.</h3>
+					<br>
+					<h3>These other types include <strong>polar</strong>, or yes-or-no questions.</h3>
+				</section>
+				<section>
+					<h3>Some polar questions are difficult to rephrase as factoid questions.</h3>
+					<div>
+						<br>
+						<h3><blockquote>Are cats crepuscular?</blockquote></h3>
+						<h3><blockquote>Did Ariel Sharon have a stroke?</blockquote></h3>
+						<h3><blockquote>Is malt an ingredient in beer?</blockquote></h3>
+						<h3><blockquote>Can Bitcoin transactions be tracked?</blockquote></h3>
+					</div>
+				</section>
+				<section>
+					<h3>In my tests, users often attempted to rephrase polar questions as factoid questions.</h3>
+					<br>
+					<h3>When the polar question could not be rephrased, they used the polar question <strong>verbatim</strong> as their search query.</h3>
+				</section>
+				<section>
+					<h3>The answers to polar questions can sometimes be found in the descriptions of the top results, but no search engine <strong>directly surfaces</strong> an answer.</h3>
+				</section>
+				<section class="presentimg">
+					<img src="img/g_p_moons.jpg" alt="Factoid screenshot" height="838" width="1433">
+				</section>
+				<section class="presentimg">
+					<img src="img/w_p_whig.jpg" alt="Factoid screenshot" height="838" width="1433">
+				</section>
+				<section class="presentimg">
+					<img src="img/b_p_linux.jpg" alt="Factoid screenshot" height="838" width="1433">
+				</section>
+				<section>
+					<h3>In the mobile, wearable future of computing, many interfaces will not be capable of supporting long pages of search results.</h3>
+					<br>
+					<h3>Users want services that answer their questions with as little work as possible.</h3>
+				</section>
+				<section>
+					<h3>Entailment prediction can be used to automatically answer polar questions using only unstructured text.</h3>
+				</section>
+				<section>
+					<h3>A system that answers polar questions takes one text, the user's question, as input.</h3>
+					<br>
+					<h3>It then uses a search engine to retrieve similar texts from the web.</h3>
+					<br>
+					<h3>The system predicts the entailment relations between these retrieved texts and the user's question. It uses these relations to predict a yes or no answer. High-scoring texts can be returned as justification.</h3>
+				</section>
+				<section>
+					<h3>If I ask "was Millard Fillmore the last Whig President?" the search engine might retrieve the following sentences:</h3>
+					<br>
+					<h3><blockquote>Millard Fillmore was the last President who was neither a Democrat nor a Republican</blockquote></h3>
+					<h3><blockquote>Millard Fillmore was the 13th president.</blockquote></h3>
+					<h3><blockquote>Millard Fillmore was the 13th president and the final Whig president.</blockquote></h3>
+				</section>
+				<section>
+					<h3><blockquote>Millard Fillmore was the last President who was neither a Democrat nor a Republican</blockquote></h3>
+					<h3><blockquote>Millard Fillmore was the 13th president.</blockquote></h3>
+					<h3><blockquote>Millard Fillmore was the 13th president and the final Whig president.</blockquote></h3>
+					<br>
+					<h3>The system predicts relations for each of these pairs, and uses the relations to predict a yes or no answer.</h3>
+				</section>
+				<section class="presentimg">
+					<iframe src="http://player.vimeo.com/video/37902812?title=0&amp;byline=0&amp;portrait=0&amp;color=cccccc" style="width:100%;height:100%;" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+				</section>
+				<section>
+					<h3>Automatically answering polar questions from unstructured text lets people use search engines intuitively; it solves a problem that will be exacerbated as mobile and wearable interfaces become more prevalent.</h3>
+					<br>
+					<h3>
+						Entailment prediction systems will be used in other applications as they become more robust.
+					</h3>
+				</section>
+				<section>
+					<h2>Questions</h2>
+				</section>
+			</div>
+
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+				{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+					]
+				});
+
+</script>
+
+</body>
+</html>
