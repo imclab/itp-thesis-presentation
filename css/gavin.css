@@ -32,6 +32,19 @@ section.present {
 	box-shadow: none !important;
 }
 
+.reveal .controls div.navigate-left, .reveal .controls div.navigate-left.enabled {
+	border-right-color: #CCC !important;
+}
+.reveal .controls div.navigate-right, .reveal .controls div.navigate-right.enabled {
+	border-left-color: #CCC !important;
+}
+.reveal .controls div.navigate-up, .reveal .controls div.navigate-up.enabled {
+	border-bottom-color: #FFF !important;
+}
+.reveal .controls div.navigate-down, .reveal .controls div.navigate-down.enabled {
+	border-top-color: #FFF !important;
+}
+
 .tmp {
 	margin: 5px auto;
 	padding: 5px;
